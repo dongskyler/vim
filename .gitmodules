@@ -10,3 +10,6 @@
 [submodule "pack/plugins/start/NERDTree"]
 	path = pack/plugins/start/NERDTree
 	url = https://github.com/preservim/nerdtree.git
+[submodule "pack/plugins/start/Ack"]
+	path = pack/plugins/start/Ack
+	url = https://github.com/mileszs/ack.vim.git
