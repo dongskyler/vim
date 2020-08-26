@@ -165,7 +165,7 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 " Update time (ms)
-set updatetime=330
+set updatetime=1000
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -200,5 +200,5 @@ nnoremap <C-L> :nohl<CR><C-L>
 "------------------------------------------------------------
 
 " GitGutter
-" let g:gitgutter_grep=''
+let g:gitgutter_grep=''
 set signcolumn=yes
