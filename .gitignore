@@ -1,3 +1,10 @@
+# Directory
+**/tem
+**/tmp
+**/swap
+**/backup
+**/undo
+
 # General
 .DS_Store
 .AppleDouble

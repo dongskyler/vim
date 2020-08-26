@@ -117,15 +117,15 @@ set pastetoggle=<F11>
 set updatetime=330
 
 " Set swap file directory
-set dir=/private/tmp
+set directory=$HOME/.vim/tmp/swap
 
 " Keep a backup file
 set backup
-set backupdir=/private/tmp
+set backupdir=$HOME/.vim/tmp/backup
 
 " Keep an undo file (undo changes after closing)
 set undofile
-set undodir=/private/tmp
+set undodir=$HOME/.vim/tmp/undo
 
 "------------------------------------------------------------
 " Indentation options
