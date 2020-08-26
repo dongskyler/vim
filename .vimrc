@@ -1,52 +1,7 @@
 " .vimrc
 
-" When started as "evim", evim.vim will already have done these settings, bail
-" out.
-if v:progname =~? "evim"
-  finish
-endif
-
-" Get the defaults that most users want.
-" source $VIMRUNTIME/defaults.vim
-
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file (restore to previous version)
-  if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
-  endif
-endif
-
-if &t_Co > 2 || has("gui_running")
-  " Switch on highlighting the last used search pattern.
-  set hlsearch
-endif
-
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-augroup END
-
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
-" The ! means the package won't be loaded right away but when plugins are
-" loaded during initialization.
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-
 "------------------------------------------------------------
-"
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
+" Basic configurations
 
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -62,11 +17,6 @@ syntax on
 
 " Color scheme
 colorscheme elflord
-
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
 
 " Vim with default settings does not allow easy switching between multiple files
 " in the same editor window. Users can use multiple split windows or multiple
@@ -104,10 +54,9 @@ set hlsearch
 " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
 " set nomodeline
 
-
 "------------------------------------------------------------
-" Usability options {{{1
-"
+" Usability options
+
 " These are options that users frequently set in their .vimrc. Some of them
 " change Vim's behaviour in ways which deviate from the true Vi way, but
 " which are considered to add usability. Which, if any, of these options to
@@ -159,7 +108,7 @@ set cmdheight=2
 set number
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=330
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -167,10 +116,19 @@ set pastetoggle=<F11>
 " Update time (ms)
 set updatetime=330
 
+" Set swap file directory
+set dir=/private/tmp
+
+" Keep a backup file
+set backup
+set backupdir=/private/tmp
+
+" Keep an undo file (undo changes after closing)
+set undofile
+set undodir=/private/tmp
+
 "------------------------------------------------------------
-" Indentation options {{{1
-"
-" Indentation settings according to personal preference.
+" Indentation options
 
 " Indentation settings for using 4 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
@@ -183,11 +141,8 @@ set expandtab
 "set shiftwidth=4
 "set tabstop=4
 
-
 "------------------------------------------------------------
-" Mappings {{{1
-"
-" Useful mappings
+" Mappings
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
@@ -198,6 +153,7 @@ map Y y$
 nnoremap <C-L> :nohl<CR><C-L>
 
 "------------------------------------------------------------
+" Plugins
 
 " GitGutter
 " let g:gitgutter_grep=''
