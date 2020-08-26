@@ -13,3 +13,6 @@
 [submodule "pack/plugins/start/Ack"]
 	path = pack/plugins/start/Ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "pack/plugins/start/NERDCommenter"]
+	path = pack/plugins/start/NERDCommenter
+	url = https://github.com/preservim/nerdcommenter.git
