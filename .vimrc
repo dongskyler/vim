@@ -108,13 +108,13 @@ set cmdheight=2
 set number
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=330
+set notimeout ttimeout ttimeoutlen=250
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
 " Update time (ms)
-set updatetime=330
+set updatetime=250
 
 " Set swap file directory
 set directory=$HOME/.vim/tmp/swap
@@ -158,3 +158,4 @@ nnoremap <C-L> :nohl<CR><C-L>
 " GitGutter
 " let g:gitgutter_grep=''
 set signcolumn=yes
+

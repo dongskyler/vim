@@ -16,3 +16,15 @@
 [submodule "pack/plugins/start/NERDCommenter"]
 	path = pack/plugins/start/NERDCommenter
 	url = https://github.com/preservim/nerdcommenter.git
+[submodule "pack/plugins/start/syntastic"]
+	path = pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "pack/plugins/start/surround"]
+	path = pack/plugins/start/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "pack/plugins/start/fugitive"]
+	path = pack/plugins/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/plugins/start/auto-pairs"]
+	path = pack/plugins/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
