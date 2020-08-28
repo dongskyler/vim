@@ -1,13 +1,9 @@
 # Vim
 .netrwhist
 *~
+.swp
 
 # Directory
-**/temp
-**/tmp
-**/swap
-**/backup
-**/undo
 
 # General
 .DS_Store
