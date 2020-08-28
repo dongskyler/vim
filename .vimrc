@@ -3,6 +3,7 @@
 " Homepage: <https://github.com/dongskyler/vim>
 
 "------------------------------------------------------------
+" Basic settings
 
 set nocompatible
 
@@ -12,8 +13,6 @@ syntax on
 
 set encoding=utf-8 nobomb
 set spelllang=en_us
-
-set relativenumber
 
 " Temporary files
 set directory=$HOME/.vim/tmp/swap
@@ -60,13 +59,17 @@ set smartcase
 
 " Keys
 
+let mapleader=";"
+" let maplocalleader="'"
+
 set backspace=indent,eol,start
 set nostartofline
 set esckeys
+
 set timeout
-set timeoutlen=1000
+set timeoutlen=5000
 set ttimeout
-set ttimeoutlen=500
+set ttimeoutlen=5000
 
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
@@ -96,8 +99,11 @@ set cursorline
 set laststatus=2
 set number
 set numberwidth=4
+set relativenumber
+
 " Show all changes
 set report=0
+
 " Show partial commands in the last line of the screen
 set showcmd
 set showmode
@@ -105,7 +111,7 @@ set showmatch
 set title
 set splitbelow
 set splitright
-set scrolloff=5
+set scrolloff=7
 set sidescrolloff=7
 set sidescroll=1
 
