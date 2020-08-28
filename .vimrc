@@ -14,6 +14,9 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
+set redrawtime=10000
+"set norelativenumber
+set re=1
 
 " Color scheme
 colorscheme elflord
@@ -114,7 +117,7 @@ set notimeout ttimeout ttimeoutlen=250
 set pastetoggle=<F11>
 
 " Update time (ms)
-set updatetime=250
+set updatetime=500
 
 " Set swap file directory
 set directory=$HOME/.vim/tmp/swap
