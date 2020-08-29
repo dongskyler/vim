@@ -31,3 +31,6 @@
 [submodule "pack/plugins/start/typescript-vim"]
 	path = pack/plugins/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "pack/plugins/start/goyo"]
+	path = pack/plugins/start/goyo
+	url = https://github.com/junegunn/goyo.vim.git

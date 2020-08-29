@@ -29,7 +29,7 @@ set undolevels=500
 set ttyfast
 set updatetime=330
 set lazyredraw
-set redrawtime=10000
+set redrawtime=3000
 set hidden
 
 " Note that not everyone likes working this way (with the hidden option).
@@ -57,36 +57,38 @@ set incsearch
 set ignorecase
 set smartcase
 
-" Keys
-
-let mapleader=";"
-" let maplocalleader="'"
-
-set backspace=indent,eol,start
-set nostartofline
-set esckeys
-
-set timeout
-set timeoutlen=5000
-set ttimeout
-set ttimeoutlen=5000
-
-" Use <F11> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F11>
-
 " Mouse
 set mouse=a
 
 "------------------------------------------------------------
 " Mappings
 
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-map Y y$
+let mapleader=";"
+" let maplocalleader="'"
+
+set backspace=indent,eol,start
+set nostartofline
+
+" if !has('nvim')
+  " set esckeys
+" end
+
+set timeout
+set timeoutlen=3000
+set ttimeout
+set ttimeoutlen=30
+
+" Use <F12> to toggle between 'paste' and 'nopaste'
+set pastetoggle=<F12>
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
+" which is the default
+map Y y$
+
 
 "------------------------------------------------------------
 " UI
@@ -160,8 +162,9 @@ let NERDTreeIgnore=['.DS_Store']
 let NERDTreeShowBookmarks=0 "show bookmarks on startup
 let NERDTreeHighlightCursorline=1 "Highlight the selected entry in the tree
 let NERDTreeShowLineNumbers=0
+let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
-noremap <leader>nt :NERDTreeToggle<CR>
+noremap <C-n> :NERDTreeToggle<CR>
 
 " -- NERDCommenter --
 let NERDSpaceDelims=1 " space around delimiters
