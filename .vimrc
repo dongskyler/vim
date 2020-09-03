@@ -49,7 +49,7 @@ set confirm
 set wildmenu
 
 " Search and regex
-set gdefault
+" set gdefault
 set magic
 set hlsearch
 set incsearch
@@ -89,11 +89,10 @@ nnoremap <C-L> :nohl<CR><C-L>
 " which is the default
 map Y y$
 
-
 "------------------------------------------------------------
 " UI
 
-colorscheme elflord
+colorscheme pablo
 
 set ruler
 set cursorline
@@ -113,8 +112,8 @@ set showmatch
 set title
 set splitbelow
 set splitright
-set scrolloff=7
-set sidescrolloff=7
+set scrolloff=6
+set sidescrolloff=6
 set sidescroll=1
 
 set visualbell
@@ -123,9 +122,8 @@ set visualbell
 " is unset, this does nothing.
 set t_vb=
 
-" Set the command window height to 2 lines, to avoid many cases of having to
 " "press <Enter> to continue"
-set cmdheight=2
+set cmdheight=1
 
 "------------------------------------------------------------
 " Indentation options
@@ -158,7 +156,7 @@ set nomodeline
 set signcolumn=yes
 
 " -- NERDTree --
-let NERDTreeIgnore=['.DS_Store']
+" let NERDTreeIgnore=['.DS_Store']
 let NERDTreeShowBookmarks=0 "show bookmarks on startup
 let NERDTreeHighlightCursorline=1 "Highlight the selected entry in the tree
 let NERDTreeShowLineNumbers=0
