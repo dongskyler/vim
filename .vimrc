@@ -122,7 +122,6 @@ set visualbell
 " is unset, this does nothing.
 set t_vb=
 
-" "press <Enter> to continue"
 set cmdheight=1
 
 "------------------------------------------------------------
@@ -172,8 +171,14 @@ let g:NERDCustomDelimiters = {
 \ }
 
 " -- Syntastic : Linting / Error check --
-let g:syntastic_auto_loc_list=2
-let g:syntastic_check_on_open=1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " close/open location list (errors)
 noremap <silent><leader>lc :lcl<CR>
 noremap <silent><leader>lo :Errors<CR> :lw<CR>
