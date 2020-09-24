@@ -1,5 +1,4 @@
-" .vimrc
-" Skyler Dong (dongskyler@gmail.com) <skylerdong.com>
+" . Skyler Dong (dongskyler@gmail.com) <skylerdong.com>
 " Homepage: <https://github.com/dongskyler/vim>
 
 "------------------------------------------------------------
@@ -92,7 +91,16 @@ map Y y$
 "------------------------------------------------------------
 " UI
 
-colorscheme pablo
+let g:gruvbox_termcolors='256'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
+" let g:gruvbox_hls_cursor='orange'
+" let g:gruvbox_number_column='bg0'
+" let g:gruvbox_sign_column='bg1'
+let g:gruvbox_color_column='bg2'
+" let g:gruvbox_invert_tabline='0'
+autocmd vimenter * colorscheme gruvbox
+set bg=dark
 
 set ruler
 set cursorline
