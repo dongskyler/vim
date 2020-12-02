@@ -35,5 +35,5 @@
 	path = pack/plugins/start/goyo
 	url = https://github.com/junegunn/goyo.vim.git
 [submodule "pack/plugins/start/grovbox"]
-	path = pack/plugins/start/grovbox
+	path = pack/plugins/start/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
