@@ -39,6 +39,8 @@ set hidden
 
 " File handling
 set autoread
+set path=.,src,node_modules
+set suffixesadd=.js,.jsx,.ts,.tsx
 
 " Instead of failing a command because of unsaved changes, instead raise a
 " dialogue asking if you wish to save changed files.
@@ -77,9 +79,6 @@ set timeoutlen=3000
 set ttimeout
 set ttimeoutlen=30
 
-" Use <F12> to toggle between 'paste' and 'nopaste'
-set pastetoggle=<F12>
-
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
@@ -110,7 +109,7 @@ set cursorline
 set laststatus=2
 set number
 set numberwidth=4
-set relativenumber
+" set relativenumber
 
 " Show all changes
 set report=0
