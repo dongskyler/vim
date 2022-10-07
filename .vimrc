@@ -54,6 +54,8 @@ set wildmenu
 set magic
 set hlsearch
 set incsearch
+set shortmess-=S
+
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
@@ -87,20 +89,47 @@ nnoremap <C-L> :nohl<CR><C-L>
 " which is the default
 map Y y$
 
+nmap gd <Plug>(coc-definition)
+
 "------------------------------------------------------------
 " UI
 
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
 set guicursor=a:ver20-blinkon0
+
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+else
+  let &t_SI = "\e[5 q"
+  let &t_EI = "\e[2 q"
+endif
 
 let g:gruvbox_termcolors='256'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
-" let g:gruvbox_hls_cursor='orange'
-" let g:gruvbox_number_column='bg0'
-" let g:gruvbox_sign_column='bg1'
+let g:gruvbox_bold=1
+let g:gruvbox_hls_cursor='orange'
+let g:gruvbox_number_column='bg0'
+let g:gruvbox_sign_column='bg1'
 let g:gruvbox_color_column='bg2'
-" let g:gruvbox_invert_tabline='0'
-autocmd vimenter * colorscheme gruvbox
+let g:gruvbox_invert_tabline='0'
+
+" -- vimdiff color scheme --
+if &diff
+  colorscheme apprentice
+else
+  autocmd vimenter * colorscheme gruvbox
+endif
+
 set bg=dark
 
 set ruler
@@ -146,7 +175,7 @@ set shiftwidth=2
 set smarttab
 
 set wrap
-set textwidth=79
+set textwidth=80
 " set formatoptions=qrn1
 " set formatoptions-=o
 set pastetoggle=<leader>p
