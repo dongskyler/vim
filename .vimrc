@@ -21,12 +21,12 @@ set undofile
 set undodir=$HOME/.vim/tmp/undo
 
 " History and undo
-set history=500
-set undolevels=500
+set history=1000
+set undolevels=1000
 
 " Buffer
 set ttyfast
-set updatetime=330
+set updatetime=750
 set lazyredraw
 set redrawtime=3000
 set hidden
