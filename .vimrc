@@ -26,7 +26,7 @@ set undolevels=1000
 
 " Buffer
 set ttyfast
-set updatetime=750
+set updatetime=250
 set lazyredraw
 set redrawtime=3000
 set hidden
@@ -187,6 +187,56 @@ set nomodeline
 
 "------------------------------------------------------------
 " Plugins
+
+" -- Vim-Plug --
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Theme
+Plug 'morhetz/gruvbox'
+
+" Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Better status line
+Plug 'vim-airline/vim-airline'
+
+" File browser
+Plug 'preservim/nerdtree'
+
+" Manipulate delimiters
+Plug 'tpope/vim-surround'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" Comment
+Plug 'preservim/nerdcommenter'
+
+" JavaScript/TypeSCript syntax
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+
+" Language pack
+Plug 'sheerun/vim-polyglot'
+
+" Prettier integration
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'ghmarkdown', 'vue', 'yaml', 'html', 'mdx'] }
+
+" Prose
+Plug 'junegunn/goyo.vim'
+
+" Search
+Plug 'mileszs/ack.vim'
+
+" Tags
+Plug 'ludovicchabant/vim-gutentags'
+
+call plug#end()
 
 " -- Coc --
 
