@@ -13,7 +13,7 @@ syntax on
 set encoding=utf-8 nobomb
 set spelllang=en_us
 
-" Temporary files
+" -- Temporary files --
 set directory=$HOME/.vim/tmp/swap
 set backup
 set backupdir=$HOME/.vim/tmp/backup
@@ -187,6 +187,8 @@ set nomodeline
 
 "------------------------------------------------------------
 " Plugins
+
+" -- Coc --
 
 " -- GitGutter --
 " let g:gitgutter_grep=''
