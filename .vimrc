@@ -73,7 +73,7 @@ set backspace=indent,eol,start
 set nostartofline
 
 " if !has('nvim')
-  " set esckeys
+" set esckeys
 " end
 
 set timeout
@@ -195,14 +195,11 @@ call plug#begin('~/.vim/plugged')
 " Theme
 Plug 'morhetz/gruvbox'
 
-" Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Better status line
 Plug 'vim-airline/vim-airline'
 
 " File browser
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 
 " Manipulate delimiters
 Plug 'tpope/vim-surround'
@@ -224,21 +221,44 @@ Plug 'sheerun/vim-polyglot'
 
 " Prettier integration
 Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'ghmarkdown', 'vue', 'yaml', 'html', 'mdx'] }
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'ghmarkdown', 'vue', 'yaml', 'html', 'mdx'] }
 
 " Prose
 Plug 'junegunn/goyo.vim'
 
-" Search
-Plug 'mileszs/ack.vim'
-
 " Tags
 Plug 'ludovicchabant/vim-gutentags'
 
+" Find and replace
+Plug 'mileszs/ack.vim'
+Plug 'brooth/far.vim'
+
+" Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 
-" -- Coc --
+" Coc extensions
+" let g:coc_global_extensions = [
+      " \ 'coc-css',
+      " \ 'coc-eslint',
+      " \ 'coc-explorer',
+      " \ 'coc-highlight',
+      " \ 'coc-html',
+      " \ 'coc-html-css-support',
+      " \ 'coc-json',
+      " \ 'coc-pairs',
+      " \ 'coc-prettier',
+      " \ 'coc-react-refactor',
+      " \ 'coc-sh',
+      " \ 'coc-styled-components',
+      " \ 'coc-tsserver',
+      " \ ]
+
+" -- Coc-explorer --
+" noremap <space>e <Cmd>CocCommand explorer<CR>
+noremap <C-n> <Cmd>CocCommand explorer<CR>
 
 " -- GitGutter --
 " let g:gitgutter_grep=''
@@ -261,9 +281,9 @@ augroup tagAug
 augroup end
 
 let g:gutentags_ctags_extra_args = [
-    \ '--tag-relative=yes',
-    \ '--fields=+ailmnS',
-    \ ]
+      \ '--tag-relative=yes',
+      \ '--fields=+ailmnS',
+      \ ]
 let g:gutentags_ctags_exclude = [
       \ '*.git', '*.svg', '*.hg',
       \ '*/tests/*',
@@ -314,19 +334,19 @@ let g:gutentags_ctags_exclude = [
 
 " -- NERDTree --
 " let NERDTreeIgnore=['.DS_Store']
-let NERDTreeShowBookmarks=0 "show bookmarks on startup
-let NERDTreeHighlightCursorline=1 "Highlight the selected entry in the tree
-let NERDTreeShowLineNumbers=0
-let NERDTreeShowHidden=1
-let NERDTreeMinimalUI=1
-noremap <C-n> :NERDTreeToggle<CR>
+" let NERDTreeShowBookmarks=0 "show bookmarks on startup
+" let NERDTreeHighlightCursorline=1 "Highlight the selected entry in the tree
+" let NERDTreeShowLineNumbers=0
+" let NERDTreeShowHidden=1
+" let NERDTreeMinimalUI=1
+" noremap <C-n> :NERDTreeToggle<CR>
 
 " -- NERDCommenter --
 let NERDSpaceDelims=1 " space around delimiters
 let NERDRemoveExtraSpaces=1
 let g:NERDCustomDelimiters = {
-    \ 'scss': { 'left': '//' }
-\ }
+      \ 'scss': { 'left': '//' }
+      \ }
 
 " -- Syntastic : Linting / Error check --
 set statusline+=%#warningmsg#
