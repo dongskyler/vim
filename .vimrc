@@ -89,8 +89,6 @@ nnoremap <C-L> :nohl<CR><C-L>
 " which is the default
 map Y y$
 
-nmap gd <Plug>(coc-definition)
-
 "------------------------------------------------------------
 " UI
 
@@ -259,6 +257,20 @@ call plug#end()
 " -- Coc-explorer --
 " noremap <space>e <Cmd>CocCommand explorer<CR>
 noremap <C-n> <Cmd>CocCommand explorer<CR>
+
+" -- Coc --
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+" -- Coc-list --
+nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <space>s :<C-u>CocList -I symbols<cr>
 
 " -- GitGutter --
 " let g:gitgutter_grep=''
